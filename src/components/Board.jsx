@@ -1,7 +1,5 @@
 import Square from './square';
 const Board = ({ squares, handlesquareclick }) => {
-  console.log(squares);
-
   const rendersquare = position => {
     return (
       <Square
