@@ -1,6 +1,7 @@
 import React from 'react';
 
-const StatusMessage = ({ winner, isxnext, squares }) => {
+const StatusMessage = ({ winner, gamingBoard }) => {
+  const { squares, isxnext } = gamingBoard;
   const nomovesleft = squares.every(squaresvalue => squaresvalue !== null);
   const nextplayer = isxnext ? 'x' : 'o';
 
@@ -18,8 +19,8 @@ const StatusMessage = ({ winner, isxnext, squares }) => {
     if (!winner && nomovesleft) {
       return (
         <React.Fragment>
-          <span className="text-orange">o</span> and{' '}
-          <span className="text-green">x</span> tied
+          <span className="text-orange"> o </span> and{' '}
+          <span className="text-green"> x </span> tied
         </React.Fragment>
       );
     }
